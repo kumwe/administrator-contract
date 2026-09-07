@@ -1,0 +1,30 @@
+[
+  {
+    "repository": "https://github.com/kumwe/extension-sdk",
+    "old_fqcn": "Kumwe\\Extension\\Spi\\Contribution\\AdministratorNavigationDefinition",
+    "new_fqcn": "Kumwe\\Administrator\\Contract\\AdministratorNavigationDefinition",
+    "source_path": "src/Spi/Contribution/AdministratorNavigationDefinition.php",
+    "target_path": "src/AdministratorNavigationDefinition.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/extension-sdk",
+    "old_fqcn": "Kumwe\\Extension\\Spi\\Contribution\\AdministratorRouteDefinition",
+    "new_fqcn": "Kumwe\\Administrator\\Contract\\AdministratorRouteDefinition",
+    "source_path": "src/Spi/Contribution/AdministratorRouteDefinition.php",
+    "target_path": "src/AdministratorRouteDefinition.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/extension-sdk",
+    "old_fqcn": "Kumwe\\Extension\\Spi\\Contribution\\AdministratorViewDefinition",
+    "new_fqcn": "Kumwe\\Administrator\\Contract\\AdministratorViewDefinition",
+    "source_path": "src/Spi/Contribution/AdministratorViewDefinition.php",
+    "target_path": "src/AdministratorViewDefinition.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/extension-sdk",
+    "old_fqcn": "Kumwe\\Extension\\Spi\\Contribution\\AdministratorWorkspaceDefinition",
+    "new_fqcn": "Kumwe\\Administrator\\Contract\\AdministratorWorkspaceDefinition",
+    "source_path": "src/Spi/Contribution/AdministratorWorkspaceDefinition.php",
+    "target_path": "src/AdministratorWorkspaceDefinition.php"
+  }
+]

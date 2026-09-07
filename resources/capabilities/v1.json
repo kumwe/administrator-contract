@@ -1,21 +1,36 @@
 {
-  "schema": "kumwe-package-capabilities/v1",
-  "package": "kumwe/administrator-contract",
-  "namespace": "Kumwe\\Administrator\\Contract\\",
-  "responsibility": "Host-neutral administrator contribution declarations and bounded presentation contracts.",
-  "non_responsibilities": [
-    "host authorization",
-    "persistence adapters",
-    "active registries",
-    "HTTP routing",
-    "template rendering",
-    "transactions"
-  ],
-  "capabilities": [
-    {
-      "id": "administrator-contract",
-      "description": "Host-neutral administrator contribution declarations and bounded presentation contracts."
-    }
-  ],
-  "completion_claim": false
+    "schema": "kumwe-package-capabilities/v1",
+    "package": "kumwe/administrator-contract",
+    "namespace": "Kumwe\\Administrator\\Contract\\",
+    "responsibility": "Host-neutral administrator contribution declarations and bounded presentation contracts.",
+    "non_responsibilities": [
+        "host authorization",
+        "persistence adapters",
+        "active registries",
+        "HTTP routing",
+        "template rendering",
+        "transactions"
+    ],
+    "capabilities": [
+        {
+            "id": "administrator-contract.portable-contract",
+            "description": "Host-neutral administrator contribution declarations and bounded presentation contracts.",
+            "title": "Administrator Contract",
+            "symbols": [
+                "Kumwe\\Administrator\\Contract\\AdministratorContributionAdmission",
+                "Kumwe\\Administrator\\Contract\\AdministratorNavigationDefinition",
+                "Kumwe\\Administrator\\Contract\\AdministratorRouteDefinition",
+                "Kumwe\\Administrator\\Contract\\AdministratorViewDefinition",
+                "Kumwe\\Administrator\\Contract\\AdministratorWorkspaceDefinition"
+            ],
+            "documentation": [
+                "docs/public-api.md",
+                "docs/architecture.md",
+                "docs/readiness-review.md"
+            ]
+        }
+    ],
+    "release": "0.2.0",
+    "native_requirements": null,
+    "deprecations": []
 }

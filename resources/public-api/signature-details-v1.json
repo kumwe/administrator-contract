@@ -1,504 +1,488 @@
 {
-    "schema": "kumwe-package-public-api/v1",
+    "schema": "kumwe-public-api-details/v1",
     "package": "kumwe/administrator-contract",
     "release": "0.2.0",
     "namespace": "Kumwe\\Administrator\\Contract\\",
-    "symbols": {
-        "Kumwe\\Administrator\\Contract\\AdministratorContributionAdmission": {
+    "symbols": [
+        {
+            "name": "Kumwe\\Administrator\\Contract\\AdministratorContributionAdmission",
             "kind": "class",
-            "stability": "stable",
-            "file": "src/AdministratorContributionAdmission.php",
-            "abstract": false,
-            "final": true,
-            "readonly": true,
-            "parent": null,
-            "interfaces": [
-                "Kumwe\\Contribution\\ContributionDefinition"
-            ],
-            "constants": {},
-            "properties": {
-                "owner": {
-                    "type": "Kumwe\\Contribution\\ContributionOwner",
-                    "static": false,
-                    "readonly": true
-                },
-                "definition": {
-                    "type": "Kumwe\\Administrator\\Contract\\AdministratorWorkspaceDefinition|Kumwe\\Administrator\\Contract\\AdministratorNavigationDefinition|Kumwe\\Administrator\\Contract\\AdministratorRouteDefinition|Kumwe\\Administrator\\Contract\\AdministratorViewDefinition",
-                    "static": false,
-                    "readonly": true
-                },
-                "requiredCapability": {
-                    "type": "Kumwe\\Access\\Capability",
-                    "static": false,
-                    "readonly": true
-                }
-            },
-            "methods": {
-                "__construct": {
-                    "visibility": "public",
+            "methods": [
+                {
+                    "name": "__construct",
                     "static": false,
                     "parameters": [
                         {
                             "name": "owner",
                             "type": "Kumwe\\Contribution\\ContributionOwner",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "definition",
                             "type": "Kumwe\\Administrator\\Contract\\AdministratorWorkspaceDefinition|Kumwe\\Administrator\\Contract\\AdministratorNavigationDefinition|Kumwe\\Administrator\\Contract\\AdministratorRouteDefinition|Kumwe\\Administrator\\Contract\\AdministratorViewDefinition",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "requiredCapability",
                             "type": "Kumwe\\Access\\Capability",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
-                    "return": null
+                    "return": ""
                 },
-                "identifier": {
-                    "visibility": "public",
+                {
+                    "name": "identifier",
                     "static": false,
                     "parameters": [],
                     "return": "string"
                 },
-                "toArray": {
-                    "visibility": "public",
+                {
+                    "name": "toArray",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 }
-            },
-            "deprecated": null
-        },
-        "Kumwe\\Administrator\\Contract\\AdministratorNavigationDefinition": {
-            "kind": "class",
-            "stability": "stable",
-            "file": "src/AdministratorNavigationDefinition.php",
-            "abstract": false,
-            "final": true,
-            "readonly": true,
-            "parent": null,
-            "interfaces": [
-                "Kumwe\\Contribution\\ContributionDefinition"
             ],
-            "constants": {},
-            "properties": {
-                "capability": {
-                    "type": "string",
-                    "static": false,
+            "properties": [
+                {
+                    "name": "owner",
+                    "type": "Kumwe\\Contribution\\ContributionOwner",
                     "readonly": true
                 },
-                "id": {
-                    "type": "string",
-                    "static": false,
+                {
+                    "name": "definition",
+                    "type": "Kumwe\\Administrator\\Contract\\AdministratorWorkspaceDefinition|Kumwe\\Administrator\\Contract\\AdministratorNavigationDefinition|Kumwe\\Administrator\\Contract\\AdministratorRouteDefinition|Kumwe\\Administrator\\Contract\\AdministratorViewDefinition",
                     "readonly": true
                 },
-                "workspace": {
-                    "type": "string",
-                    "static": false,
-                    "readonly": true
-                },
-                "label": {
-                    "type": "string",
-                    "static": false,
-                    "readonly": true
-                },
-                "description": {
-                    "type": "string",
-                    "static": false,
-                    "readonly": true
-                },
-                "path": {
-                    "type": "string",
-                    "static": false,
-                    "readonly": true
-                },
-                "icon": {
-                    "type": "string",
-                    "static": false,
-                    "readonly": true
-                },
-                "priority": {
-                    "type": "int",
-                    "static": false,
-                    "readonly": true
-                },
-                "keywords": {
-                    "type": "string",
-                    "static": false,
-                    "readonly": true
-                },
-                "surface": {
-                    "type": "?string",
-                    "static": false,
+                {
+                    "name": "requiredCapability",
+                    "type": "Kumwe\\Access\\Capability",
                     "readonly": true
                 }
-            },
-            "methods": {
-                "__construct": {
-                    "visibility": "public",
+            ],
+            "constants": [],
+            "constant_values": []
+        },
+        {
+            "name": "Kumwe\\Administrator\\Contract\\AdministratorNavigationDefinition",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
                     "static": false,
                     "parameters": [
                         {
                             "name": "id",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "workspace",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "label",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "description",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "path",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "icon",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "capability",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "priority",
                             "type": "int",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "keywords",
                             "type": "string",
                             "optional": true,
+                            "default": "''",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "surface",
                             "type": "?string",
                             "optional": true,
+                            "default": "NULL",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
-                    "return": null
+                    "return": ""
                 },
-                "identifier": {
-                    "visibility": "public",
+                {
+                    "name": "identifier",
                     "static": false,
                     "parameters": [],
                     "return": "string"
                 },
-                "toArray": {
-                    "visibility": "public",
+                {
+                    "name": "toArray",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 }
-            },
-            "deprecated": null
-        },
-        "Kumwe\\Administrator\\Contract\\AdministratorRouteDefinition": {
-            "kind": "class",
-            "stability": "stable",
-            "file": "src/AdministratorRouteDefinition.php",
-            "abstract": false,
-            "final": true,
-            "readonly": true,
-            "parent": null,
-            "interfaces": [
-                "Kumwe\\Contribution\\ContributionDefinition"
             ],
-            "constants": {},
-            "properties": {
-                "methods": {
-                    "type": "array",
-                    "static": false,
+            "properties": [
+                {
+                    "name": "capability",
+                    "type": "string",
                     "readonly": true
                 },
-                "capability": {
+                {
+                    "name": "id",
                     "type": "string",
-                    "static": false,
                     "readonly": true
                 },
-                "name": {
+                {
+                    "name": "workspace",
                     "type": "string",
-                    "static": false,
                     "readonly": true
                 },
-                "path": {
+                {
+                    "name": "label",
                     "type": "string",
-                    "static": false,
                     "readonly": true
                 },
-                "view": {
+                {
+                    "name": "description",
                     "type": "string",
-                    "static": false,
+                    "readonly": true
+                },
+                {
+                    "name": "path",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "icon",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "priority",
+                    "type": "int",
+                    "readonly": true
+                },
+                {
+                    "name": "keywords",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "surface",
+                    "type": "?string",
                     "readonly": true
                 }
-            },
-            "methods": {
-                "__construct": {
-                    "visibility": "public",
+            ],
+            "constants": [],
+            "constant_values": []
+        },
+        {
+            "name": "Kumwe\\Administrator\\Contract\\AdministratorRouteDefinition",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
                     "static": false,
                     "parameters": [
                         {
                             "name": "name",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "path",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "methods",
                             "type": "array",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "capability",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "view",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
-                    "return": null
+                    "return": ""
                 },
-                "identifier": {
-                    "visibility": "public",
+                {
+                    "name": "identifier",
                     "static": false,
                     "parameters": [],
                     "return": "string"
                 },
-                "toArray": {
-                    "visibility": "public",
+                {
+                    "name": "toArray",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 }
-            },
-            "deprecated": null
-        },
-        "Kumwe\\Administrator\\Contract\\AdministratorViewDefinition": {
-            "kind": "class",
-            "stability": "stable",
-            "file": "src/AdministratorViewDefinition.php",
-            "abstract": false,
-            "final": true,
-            "readonly": true,
-            "parent": null,
-            "interfaces": [
-                "Kumwe\\Contribution\\ContributionDefinition"
             ],
-            "constants": {},
-            "properties": {
-                "name": {
-                    "type": "string",
-                    "static": false,
+            "properties": [
+                {
+                    "name": "methods",
+                    "type": "array",
                     "readonly": true
                 },
-                "template": {
+                {
+                    "name": "capability",
                     "type": "string",
-                    "static": false,
+                    "readonly": true
+                },
+                {
+                    "name": "name",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "path",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "view",
+                    "type": "string",
                     "readonly": true
                 }
-            },
-            "methods": {
-                "__construct": {
-                    "visibility": "public",
+            ],
+            "constants": [],
+            "constant_values": []
+        },
+        {
+            "name": "Kumwe\\Administrator\\Contract\\AdministratorViewDefinition",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
                     "static": false,
                     "parameters": [
                         {
                             "name": "name",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "template",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
-                    "return": null
+                    "return": ""
                 },
-                "identifier": {
-                    "visibility": "public",
+                {
+                    "name": "identifier",
                     "static": false,
                     "parameters": [],
                     "return": "string"
                 },
-                "toArray": {
-                    "visibility": "public",
+                {
+                    "name": "toArray",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 }
-            },
-            "deprecated": null
-        },
-        "Kumwe\\Administrator\\Contract\\AdministratorWorkspaceDefinition": {
-            "kind": "class",
-            "stability": "stable",
-            "file": "src/AdministratorWorkspaceDefinition.php",
-            "abstract": false,
-            "final": true,
-            "readonly": true,
-            "parent": null,
-            "interfaces": [
-                "Kumwe\\Contribution\\ContributionDefinition"
             ],
-            "constants": {},
-            "properties": {
-                "id": {
+            "properties": [
+                {
+                    "name": "name",
                     "type": "string",
-                    "static": false,
                     "readonly": true
                 },
-                "label": {
+                {
+                    "name": "template",
                     "type": "string",
-                    "static": false,
-                    "readonly": true
-                },
-                "description": {
-                    "type": "string",
-                    "static": false,
-                    "readonly": true
-                },
-                "priority": {
-                    "type": "int",
-                    "static": false,
                     "readonly": true
                 }
-            },
-            "methods": {
-                "__construct": {
-                    "visibility": "public",
+            ],
+            "constants": [],
+            "constant_values": []
+        },
+        {
+            "name": "Kumwe\\Administrator\\Contract\\AdministratorWorkspaceDefinition",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
                     "static": false,
                     "parameters": [
                         {
                             "name": "id",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "label",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "description",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "priority",
                             "type": "int",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
-                    "return": null
+                    "return": ""
                 },
-                "assertIdentifier": {
-                    "visibility": "public",
+                {
+                    "name": "assertIdentifier",
                     "static": true,
                     "parameters": [
                         {
                             "name": "identifier",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "kind",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "void"
                 },
-                "identifier": {
-                    "visibility": "public",
+                {
+                    "name": "identifier",
                     "static": false,
                     "parameters": [],
                     "return": "string"
                 },
-                "toArray": {
-                    "visibility": "public",
+                {
+                    "name": "toArray",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 }
-            },
-            "deprecated": null
+            ],
+            "properties": [
+                {
+                    "name": "id",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "label",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "description",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "priority",
+                    "type": "int",
+                    "readonly": true
+                }
+            ],
+            "constants": [],
+            "constant_values": []
         }
-    },
-    "extension_points": [],
-    "digest_of": "src/"
+    ]
 }

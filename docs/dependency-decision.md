@@ -10,3 +10,9 @@ Publication resolves the production dependencies and verifies every selected
 Kumwe version tag against its Composer source and dist commit. This does not
 require a GitHub immutable-release setting or an external attestation.
 Independent artifact verification and App integration remain separate stages.
+
+Access Control is not yet indexed by Packagist. Keep its explicit GitHub VCS
+repository to resolve the real 0.1.0 release archive. Composer does not inherit
+repository configuration from dependencies, so App must configure this repository
+at its root until the package is registered. The isolated consumer exercises the
+same repository configuration with stable-only dependency selection.

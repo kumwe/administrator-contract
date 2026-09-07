@@ -1,5 +1,12 @@
 # Dependency status
 
-Access-control uses its real merged development branch (dev-main); no immutable verified release exists for the current source closure. access-context, contribution and localization coordinates refer to the published version where required; their previous independent verification did not pass. Local package tests do not change their release-verification status. Release and App adoption stay blocked pending exact independently verified dependencies.
+Access Control is exact-pinned to the published 0.1.0 release at
+54dbaa1dbffeb09ba390a5e75e8adc951c437a41, identical to the previously reviewed
+main source. Existing published Access Context, Contribution and Localization
+requirements remain unchanged where used. No development branch or dependency
+alias is needed by this package.
 
-The reviewed Access main commit is `54dbaa1dbffeb09ba390a5e75e8adc951c437a41`. Its `src`, `composer.json`, `resources` and `tests` match the tested PR #4 source exactly; intervening differences are release automation and documentation. The former PR branch was deleted after merge.
+Publication resolves the production dependencies and verifies every selected
+Kumwe version tag against its Composer source and dist commit. This does not
+require a GitHub immutable-release setting or an external attestation.
+Independent artifact verification and App integration remain separate stages.

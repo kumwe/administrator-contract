@@ -1,6 +1,7 @@
 {
   "schema": "kumwe-release-readiness/v1",
-  "status": "blocked",
-  "reason": "Implementation review and independent release attestations are pending.",
-  "publishing_permitted": false
+  "status": "release-recorded",
+  "version": "0.1.0",
+  "reason": "Exact stable dependencies selected. Human merge triggers the complete package gate, published dependency source checks, and automatic publication.",
+  "publishing_permitted": true
 }

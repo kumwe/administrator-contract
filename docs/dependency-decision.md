@@ -1,18 +1,12 @@
 # Dependency status
 
-Access Control is exact-pinned to the published 0.1.0 release at
-54dbaa1dbffeb09ba390a5e75e8adc951c437a41, identical to the previously reviewed
-main source. Existing published Access Context, Contribution and Localization
-requirements remain unchanged where used. No development branch or dependency
-alias is needed by this package.
+The runtime dependency graph uses exact published Kumwe versions. The following source tags are the reviewed dependency coordinates; this table is not an external release attestation.
 
-Publication resolves the production dependencies and verifies every selected
-Kumwe version tag against its Composer source and dist commit. This does not
-require a GitHub immutable-release setting or an external attestation.
-Independent artifact verification and App integration remain separate stages.
+| Package | Exact version | Tag commit |
+| --- | --- | --- |
+| `kumwe/access-control` | `0.1.0` | `54dbaa1dbffeb09ba390a5e75e8adc951c437a41` |
+| `kumwe/contribution` | `0.1.0` | `0504e87c836ca61edadc92df4203d6ccba8f0eca` |
 
-Access Control is not yet indexed by Packagist. Keep its explicit GitHub VCS
-repository to resolve the real 0.1.0 release archive. Composer does not inherit
-repository configuration from dependencies, so App must configure this repository
-at its root until the package is registered. The isolated consumer exercises the
-same repository configuration with stable-only dependency selection.
+A floating `latest`, `*` or development branch is not an immutable release coordinate. A newer direct pin must be compatible with every transitive exact pin; update the dependency train bottom-up and verify each successor before publishing a dependent package. Existing exact dependencies are retained here to avoid creating an unsatisfiable mixed graph.
+
+Composer repository configuration is root-only. Until all packages are discoverable through Packagist, a consumer must reproduce the explicit VCS repositories from composer.json and those required by its full dependency graph. The built-archive consumer gate exercises this resolution.

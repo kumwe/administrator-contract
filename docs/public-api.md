@@ -2,83 +2,71 @@
 
 All values enforce the documented constructor invariants. Domain methods perform no I/O, own no transaction and make no authorization decisions. Immutable values are safe to share; host inputs and lookup ports must remain generation-stable for the duration of an operation. Exceptions and parameter detail appear below verbatim from the source contract.
 
-## Kumwe\Administrator\Contract\AdministratorWorkspaceDefinition
+## Kumwe\Administrator\Contract\AdministratorContributionAdmission
 
 /**
- * Validated declaration of an administrator workspace: the group navigation items are filed under.
+ * Versioned, owned declaration with an explicit access requirement.
  *
- * A workspace carries no behaviour of its own. It names and orders one section of the
- * administrator shell so that core and extension navigation merge into a single menu, which is why
- * the label, description, and sort weight are bounded here — an unbounded contribution would
- * distort a shell it does not own.
+ * This immutable value validates declaration admission only. It does not authenticate,
+ * authorize, activate, dispatch or render anything. The host must independently check
+ * trust, lifecycle and the required capability in the current execution context.
+ * Existing definition constructors remain serialization-compatible.
  *
- * This class also holds `assertIdentifier()`, the identifier grammar every administrator
- * contribution shares, because workspaces, navigation items, views, and routes must all be
- * checkable for namespace ownership by prefix.
- *
- * @since  0.1.0
+ * @since 0.2.0
  */
 
 ### __construct
 
 /**
-     * Validate one administrator workspace declaration.
+     * Couple a declaration to its exact owner and enforceable access requirement.
      *
-     * @param   string  $id           Dotted workspace identifier; ownership is checked when it is registered.
-     * @param   string  $label        Heading shown for the menu group; 1 to 80 characters.
-     * @param   string  $description  Sentence explaining the group to an operator; 1 to 255 characters.
-     * @param   int     $priority     Sort weight among workspaces, 0 to 100000; lower sorts nearer the top.
+     * All workspace, view/template and optional surface references must be owned by
+     * the same contributor. Route/navigation capabilities cannot be replaced by a
+     * weaker requirement. Core identifiers use the explicit built-in owner policy.
      *
-     * @throws  InvalidArgumentException  When the identifier is malformed, or the label, description, or
-     *          priority falls outside its bounds.
-     *
-     * @since   0.1.0
+     * @param ContributionOwner $owner Canonical declared owner; does not establish trust.
+     * @param WorkspaceDefinition|NavigationDefinition|RouteDefinition|ViewDefinition $definition Validated declaration.
+     * @param Capability $requiredCapability Capability the host must enforce before exposure.
+     * @throws ContributionRejected When a declaration or reference belongs to another owner.
+     * @throws InvalidArgumentException When a route/navigation requirement disagrees.
+     * @since 0.2.0
      */
 
-### assertIdentifier
-
-/**
-     * Assert that a contributed administrator identifier has the shape every surface requires.
-     *
-     * A bounded lowercase identifier that starts and ends alphanumerically, includes at least one dot,
-     * and otherwise uses letters, digits, dots, underscores, or hyphens. Internal repeated dots stay
-     * representable for existing canonical package owners that contain them. This additive grammar
-     * preserves the dotted namespace of extension identifiers across workspaces, navigation items,
-     * views, routes, and KIS surfaces, while `ContributionOwner` still decides ownership with an exact
-     * namespace prefix test.
-     *
-     * @param   string  $identifier  Candidate identifier as declared.
-     * @param   string  $kind        Contribution kind named in the failure message, such as `route`.
-     *
-     * @return  void
-     *
-     * @throws  InvalidArgumentException  When the identifier does not match the shared grammar.
-     *
-     * @since   0.1.0
-     */
+```php
+public function __construct(Kumwe\Contribution\ContributionOwner $owner, Kumwe\Administrator\Contract\AdministratorWorkspaceDefinition|Kumwe\Administrator\Contract\AdministratorNavigationDefinition|Kumwe\Administrator\Contract\AdministratorRouteDefinition|Kumwe\Administrator\Contract\AdministratorViewDefinition $definition, Kumwe\Access\Capability $requiredCapability);
+```
 
 ### identifier
 
 /**
-     * Report the identifier the contribution registries key this workspace by.
+     * Return the unchanged identifier for the canonical Contribution registry.
      *
-     * @return  string  The dotted workspace identifier exactly as declared.
-     *
-     * @since   0.1.0
+     * @return string Owner-scoped declaration identifier.
+     * @since 0.2.0
      */
+
+```php
+public function identifier(): string;
+```
 
 ### toArray
 
 /**
-     * Export the declaration in the shape the manifest declaration is compared against.
+     * Export an ordered, versioned declaration; serialization performs no policy check.
      *
-     * The administrator navigation registry also builds its menu group from this array, adding a
-     * DOM identifier of its own.
-     *
-     * @return  array{id: string, label: string, description: string, priority: int}
-     *
-     * @since   0.1.0
+     * @return array<string, mixed> Schema, owner, required capability and declaration.
+     * @since 0.2.0
      */
+
+```php
+public function toArray(): array;
+```
+
+### Public properties
+
+- `readonly Kumwe\Contribution\ContributionOwner $owner`
+- `readonly Kumwe\Administrator\Contract\AdministratorWorkspaceDefinition|Kumwe\Administrator\Contract\AdministratorNavigationDefinition|Kumwe\Administrator\Contract\AdministratorRouteDefinition|Kumwe\Administrator\Contract\AdministratorViewDefinition $definition`
+- `readonly Kumwe\Access\Capability $requiredCapability`
 
 ## Kumwe\Administrator\Contract\AdministratorNavigationDefinition
 
@@ -107,13 +95,38 @@ All values enforce the documented constructor invariants. Domain methods perform
      * @since 0.2.0
      */
 
+```php
+public function __construct(string $id, string $workspace, string $label, string $description, string $path, string $icon, string $capability, int $priority, string $keywords = '', ?string $surface = NULL);
+```
+
 ### identifier
 
 /** @return string Stable owner-scoped item identifier. @since 0.2.0 */
 
+```php
+public function identifier(): string;
+```
+
 ### toArray
 
 /** @return array<string, int|string> Canonical declaration. @since 0.2.0 */
+
+```php
+public function toArray(): array;
+```
+
+### Public properties
+
+- `readonly string $capability`
+- `readonly string $id`
+- `readonly string $workspace`
+- `readonly string $label`
+- `readonly string $description`
+- `readonly string $path`
+- `readonly string $icon`
+- `readonly int $priority`
+- `readonly string $keywords`
+- `readonly ?string $surface`
 
 ## Kumwe\Administrator\Contract\AdministratorRouteDefinition
 
@@ -150,6 +163,10 @@ All values enforce the documented constructor invariants. Domain methods perform
      * @since   0.1.0
      */
 
+```php
+public function __construct(string $name, string $path, array $methods, string $capability, string $view);
+```
+
 ### identifier
 
 /**
@@ -159,6 +176,10 @@ All values enforce the documented constructor invariants. Domain methods perform
      *
      * @since   0.1.0
      */
+
+```php
+public function identifier(): string;
+```
 
 ### toArray
 
@@ -172,6 +193,18 @@ All values enforce the documented constructor invariants. Domain methods perform
      *
      * @since   0.1.0
      */
+
+```php
+public function toArray(): array;
+```
+
+### Public properties
+
+- `readonly array $methods`
+- `readonly string $capability`
+- `readonly string $name`
+- `readonly string $path`
+- `readonly string $view`
 
 ## Kumwe\Administrator\Contract\AdministratorViewDefinition
 
@@ -199,6 +232,10 @@ All values enforce the documented constructor invariants. Domain methods perform
      * @since   0.1.0
      */
 
+```php
+public function __construct(string $name, string $template);
+```
+
 ### identifier
 
 /**
@@ -209,6 +246,10 @@ All values enforce the documented constructor invariants. Domain methods perform
      * @since   0.1.0
      */
 
+```php
+public function identifier(): string;
+```
+
 ### toArray
 
 /**
@@ -218,4 +259,114 @@ All values enforce the documented constructor invariants. Domain methods perform
      *
      * @since   0.1.0
      */
+
+```php
+public function toArray(): array;
+```
+
+### Public properties
+
+- `readonly string $name`
+- `readonly string $template`
+
+## Kumwe\Administrator\Contract\AdministratorWorkspaceDefinition
+
+/**
+ * Validated declaration of an administrator workspace: the group navigation items are filed under.
+ *
+ * A workspace carries no behaviour of its own. It names and orders one section of the
+ * administrator shell so that core and extension navigation merge into a single menu, which is why
+ * the label, description, and sort weight are bounded here — an unbounded contribution would
+ * distort a shell it does not own.
+ *
+ * This class also holds `assertIdentifier()`, the identifier grammar every administrator
+ * contribution shares, because workspaces, navigation items, views, and routes must all be
+ * checkable for namespace ownership by prefix.
+ *
+ * @since  0.1.0
+ */
+
+### __construct
+
+/**
+     * Validate one administrator workspace declaration.
+     *
+     * @param   string  $id           Dotted workspace identifier; ownership is checked when it is registered.
+     * @param   string  $label        Heading shown for the menu group; 1 to 80 characters.
+     * @param   string  $description  Sentence explaining the group to an operator; 1 to 255 characters.
+     * @param   int     $priority     Sort weight among workspaces, 0 to 100000; lower sorts nearer the top.
+     *
+     * @throws  InvalidArgumentException  When the identifier is malformed, or the label, description, or
+     *          priority falls outside its bounds.
+     *
+     * @since   0.1.0
+     */
+
+```php
+public function __construct(string $id, string $label, string $description, int $priority);
+```
+
+### assertIdentifier
+
+/**
+     * Assert that a contributed administrator identifier has the shape every surface requires.
+     *
+     * A bounded lowercase identifier that starts and ends alphanumerically, includes at least one dot,
+     * and otherwise uses letters, digits, dots, underscores, or hyphens. Internal repeated dots stay
+     * representable for existing canonical package owners that contain them. This additive grammar
+     * preserves the dotted namespace of extension identifiers across workspaces, navigation items,
+     * views, routes, and KIS surfaces, while `ContributionOwner` still decides ownership with an exact
+     * namespace prefix test.
+     *
+     * @param   string  $identifier  Candidate identifier as declared.
+     * @param   string  $kind        Contribution kind named in the failure message, such as `route`.
+     *
+     * @return  void
+     *
+     * @throws  InvalidArgumentException  When the identifier does not match the shared grammar.
+     *
+     * @since   0.1.0
+     */
+
+```php
+public static function assertIdentifier(string $identifier, string $kind): void;
+```
+
+### identifier
+
+/**
+     * Report the identifier the contribution registries key this workspace by.
+     *
+     * @return  string  The dotted workspace identifier exactly as declared.
+     *
+     * @since   0.1.0
+     */
+
+```php
+public function identifier(): string;
+```
+
+### toArray
+
+/**
+     * Export the declaration in the shape the manifest declaration is compared against.
+     *
+     * The administrator navigation registry also builds its menu group from this array, adding a
+     * DOM identifier of its own.
+     *
+     * @return  array{id: string, label: string, description: string, priority: int}
+     *
+     * @since   0.1.0
+     */
+
+```php
+public function toArray(): array;
+```
+
+### Public properties
+
+- `readonly string $id`
+- `readonly string $label`
+- `readonly string $description`
+- `readonly int $priority`
 

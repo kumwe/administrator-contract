@@ -43,10 +43,10 @@ final readonly class AdministratorWorkspaceDefinition implements ContributionDef
         public int $priority,
     ) {
         self::assertIdentifier($id, 'workspace');
-        if (trim($label) === '' || mb_strlen($label) > 80) {
+        if (!mb_check_encoding($label, 'UTF-8') || trim($label) === '' || mb_strlen($label) > 80) {
             throw new InvalidArgumentException('An administrator workspace label must contain 1 to 80 characters.');
         }
-        if (trim($description) === '' || mb_strlen($description) > 255) {
+        if (!mb_check_encoding($description, 'UTF-8') || trim($description) === '' || mb_strlen($description) > 255) {
             throw new InvalidArgumentException(
                 'An administrator workspace description must contain 1 to 255 characters.',
             );

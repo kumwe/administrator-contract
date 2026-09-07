@@ -1,0 +1,21 @@
+{
+  "schema": "kumwe-package-capabilities/v1",
+  "package": "kumwe/administrator-contract",
+  "namespace": "Kumwe\\Administrator\\Contract\\",
+  "responsibility": "Host-neutral administrator contribution declarations and bounded presentation contracts.",
+  "non_responsibilities": [
+    "host authorization",
+    "persistence adapters",
+    "active registries",
+    "HTTP routing",
+    "template rendering",
+    "transactions"
+  ],
+  "capabilities": [
+    {
+      "id": "administrator-contract",
+      "description": "Host-neutral administrator contribution declarations and bounded presentation contracts."
+    }
+  ],
+  "completion_claim": false
+}

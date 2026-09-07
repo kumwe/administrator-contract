@@ -7,7 +7,7 @@
   "require": {
     "php": "^8.5",
     "ext-mbstring": "*",
-    "kumwe/access-control": "dev-main",
+    "kumwe/access-control": "0.1.0",
     "kumwe/contribution": "0.1.0"
   },
   "require-dev": {
@@ -72,11 +72,5 @@
     ]
   },
   "minimum-stability": "stable",
-  "prefer-stable": true,
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/kumwe/access-control"
-    }
-  ]
+  "prefer-stable": true
 }

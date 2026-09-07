@@ -4,27 +4,97 @@
     "old_fqcn": "Kumwe\\Extension\\Spi\\Contribution\\AdministratorNavigationDefinition",
     "new_fqcn": "Kumwe\\Administrator\\Contract\\AdministratorNavigationDefinition",
     "source_path": "src/Spi/Contribution/AdministratorNavigationDefinition.php",
-    "target_path": "src/AdministratorNavigationDefinition.php"
+    "target_path": "src/AdministratorNavigationDefinition.php",
+    "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "source_sha256": "8222751a689392979c1fca67710893d34452511570f726c63f1b84d2242f080d",
+    "kind": "class",
+    "public_methods": [
+      "__construct",
+      "identifier",
+      "toArray"
+    ],
+    "public_properties": [
+      "capability",
+      "id",
+      "workspace",
+      "label",
+      "description",
+      "path",
+      "icon",
+      "priority",
+      "keywords",
+      "surface"
+    ],
+    "public_constants": [],
+    "compatibility": "namespace ownership move; see COMPATIBILITY.md"
   },
   {
     "repository": "https://github.com/kumwe/extension-sdk",
     "old_fqcn": "Kumwe\\Extension\\Spi\\Contribution\\AdministratorRouteDefinition",
     "new_fqcn": "Kumwe\\Administrator\\Contract\\AdministratorRouteDefinition",
     "source_path": "src/Spi/Contribution/AdministratorRouteDefinition.php",
-    "target_path": "src/AdministratorRouteDefinition.php"
+    "target_path": "src/AdministratorRouteDefinition.php",
+    "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "source_sha256": "1ad5c2fdc3c318a5f1a9a9e3255e6a4608d01a25f7406969a47a053607632408",
+    "kind": "class",
+    "public_methods": [
+      "__construct",
+      "identifier",
+      "toArray"
+    ],
+    "public_properties": [
+      "methods",
+      "capability",
+      "name",
+      "path",
+      "view"
+    ],
+    "public_constants": [],
+    "compatibility": "namespace ownership move; see COMPATIBILITY.md"
   },
   {
     "repository": "https://github.com/kumwe/extension-sdk",
     "old_fqcn": "Kumwe\\Extension\\Spi\\Contribution\\AdministratorViewDefinition",
     "new_fqcn": "Kumwe\\Administrator\\Contract\\AdministratorViewDefinition",
     "source_path": "src/Spi/Contribution/AdministratorViewDefinition.php",
-    "target_path": "src/AdministratorViewDefinition.php"
+    "target_path": "src/AdministratorViewDefinition.php",
+    "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "source_sha256": "8501f0653b742c1153d7f73b50664c641a0018e9b915e03690d888a25f3883c9",
+    "kind": "class",
+    "public_methods": [
+      "__construct",
+      "identifier",
+      "toArray"
+    ],
+    "public_properties": [
+      "name",
+      "template"
+    ],
+    "public_constants": [],
+    "compatibility": "namespace ownership move; see COMPATIBILITY.md"
   },
   {
     "repository": "https://github.com/kumwe/extension-sdk",
     "old_fqcn": "Kumwe\\Extension\\Spi\\Contribution\\AdministratorWorkspaceDefinition",
     "new_fqcn": "Kumwe\\Administrator\\Contract\\AdministratorWorkspaceDefinition",
     "source_path": "src/Spi/Contribution/AdministratorWorkspaceDefinition.php",
-    "target_path": "src/AdministratorWorkspaceDefinition.php"
+    "target_path": "src/AdministratorWorkspaceDefinition.php",
+    "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "source_sha256": "e6260ff8b756b7a934b21804b0aa04182319ec4ec6e83cbbae8493079182f0c4",
+    "kind": "class",
+    "public_methods": [
+      "__construct",
+      "assertIdentifier",
+      "identifier",
+      "toArray"
+    ],
+    "public_properties": [
+      "id",
+      "label",
+      "description",
+      "priority"
+    ],
+    "public_constants": [],
+    "compatibility": "namespace ownership move; see COMPATIBILITY.md"
   }
 ]

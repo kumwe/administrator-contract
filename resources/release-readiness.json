@@ -1,0 +1,6 @@
+{
+  "schema": "kumwe-release-readiness/v1",
+  "status": "blocked",
+  "reason": "Implementation review and independent release attestations are pending.",
+  "publishing_permitted": false
+}

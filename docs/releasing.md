@@ -1,11 +1,11 @@
 # Releasing
 
-The newest stable heading in CHANGELOG.md records the release version. This package
-starts at 0.1.0. Maintainers review and rebase-merge the release PR into the default
+The newest stable heading in CHANGELOG.md records the 0.2.0 candidate. The
+published baseline is 0.1.0. Maintainers review and rebase-merge the release PR into the default
 branch. No manual setup command is required.
 
 The release workflow reuses the complete package CI at the actual post-rebase
-commit: syntax, API and architecture checks, maximum-level static analysis,
+commit: syntax, API, governed-manifest and architecture checks, maximum-level static analysis,
 coding standards, package-owned behavior tests, examples, security audit, and
 the isolated no-dev archive consumer. Package gate also requires the common
 release automation regression tests. A failure prevents publication.

@@ -44,7 +44,7 @@ target:
   artifact_identity: "kumwe/administrator-contract"
   canonical_namespace_or_abi: "Kumwe\\Administrator\\Contract\\"
   branch: codex/integration-readiness-20260908
-  pull_request: "https://github.com/kumwe/administrator-contract/pull/4"
+  pull_request: https://github.com/kumwe/administrator-contract/pull/5
 ownership:
   responsibility: "Host-neutral administrator contribution declarations and bounded presentation contracts."
   non_responsibilities:
@@ -73,7 +73,7 @@ ownership:
       sha256: "70639318efb922d2385cd9a099ba020ed3777810e2c3bcd66ab4ce35e038c580"
     -
       path: "resources/public-api/signature-details-v1.json"
-      sha256: "63ecabed005aa145b968cabc14d25acff3f89d3451a023662a2d76084a9de252"
+      sha256: "f91fd1762fc22d82a4e7238c315c4e21cb3b14e90bd9264c3fcf720b32e7e3a1"
   intentionally_excluded:
     - "SDK HTTP bindings and renderers remain host-owned"
 framework_php:

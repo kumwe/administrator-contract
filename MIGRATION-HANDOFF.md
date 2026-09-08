@@ -43,7 +43,7 @@ target:
   repository: "https://github.com/kumwe/administrator-contract"
   artifact_identity: "kumwe/administrator-contract"
   canonical_namespace_or_abi: "Kumwe\\Administrator\\Contract\\"
-  branch: "codex/extraction-readiness-20260907"
+  branch: codex/integration-readiness-20260908
   pull_request: "https://github.com/kumwe/administrator-contract/pull/4"
 ownership:
   responsibility: "Host-neutral administrator contribution declarations and bounded presentation contracts."
@@ -64,13 +64,13 @@ ownership:
   public_manifests:
     -
       path: "resources/public-api/v1.json"
-      sha256: "08395b4463b39d48097382e886694f9af13f4ade787586fa506ac2062bfcdcbe"
+      sha256: "358f0c10db36d24336a9d9a9eb4aa7883fa52bef89a6405e8ec144045c323234"
     -
       path: "resources/capabilities/v1.json"
-      sha256: "996481391fa68f88bcdb0b3d2c570fcf3b9ec874fb77e9f843eb3bfc7249ab35"
+      sha256: "544befcb798ea27deb239b7004ae1ef5b18712409eb3cd6a0b54c3cd1f798692"
     -
       path: "resources/service-map/v1.json"
-      sha256: "b83eb74d7dfedcd6a82455e9f2ba7f4d83373e9ffb2ed42374320c82f8f6eb86"
+      sha256: "70639318efb922d2385cd9a099ba020ed3777810e2c3bcd66ab4ce35e038c580"
     -
       path: "resources/public-api/signature-details-v1.json"
       sha256: "63ecabed005aa145b968cabc14d25acff3f89d3451a023662a2d76084a9de252"
@@ -213,9 +213,9 @@ documentation:
   integration_or_consumer: "docs/integration.md"
   examples:
     - "examples/standalone.php"
-  changelog_record: "CHANGELOG.md#0.2.0"
+  changelog_record: "CHANGELOG.md ## 0.2.1"
 release_expectations:
-  version_policy: "SemVer; 0.2.0 candidate source release record, published baseline 0.1.0. Exact consumer pins follow independent artifact verification."
+  version_policy: "SemVer; 0.2.1 successor release record, published baseline 0.2.0. Exact consumer pins follow independent artifact verification."
   expected_artifact_types:
     - "Composer ZIP"
   required_checks:
@@ -324,6 +324,14 @@ The framework consumer inventory covers App production references, configuration
 All portable behavior and new boundary regression tests are owned by this repository. The machine-readable test inventory lists package tests, consumer tests to retain, split tests and prohibited duplicates. App acceptance and integration tests are retained for the later adoption phase. They were not run or claimed by this review.
 
 ## Next-task execution notes
+
+The selected production dependency tuple is:
+
+- kumwe/access-control 0.1.2
+- kumwe/contribution 0.1.1
+
+Published dependency identities and independent archive consumers must be verified before adoption.
+The package gate enforces agreement between Composer constraints and the dependency evidence coordinates.
 
 Merge only after required package checks pass. Publish through the existing default-branch release workflow, independently verify the actual archive, then advance the exact dependency pins as a coherent consumer train. The next-task block provides the concrete App changes for that later phase. Completed extraction implementation is documented as present behavior; publication and App acceptance remain open gates.
 

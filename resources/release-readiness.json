@@ -1,8 +1,19 @@
 {
-    "schema": "kumwe-release-readiness/v1",
-    "status": "release-recorded",
-    "version": "0.2.0",
-    "published_baseline": "0.1.0",
-    "publishing_permitted": true,
-    "reason": "Successor source release record for review. Dependencies retain a coherent exact stable graph. Human merge and passing release gates are required before publication; no release verification or App readiness attestation is claimed."
+  "schema": "kumwe-release-readiness/v1",
+  "status": "release-recorded",
+  "version": "0.2.1",
+  "published_baseline": "0.1.0",
+  "publishing_permitted": true,
+  "reason": "Exact dependency coordinates are recorded; independent artifact verification and the coordinated consumer release train remain required before adoption.",
+  "dependencies": {
+    "kumwe/access-control": {
+      "version": "0.1.2",
+      "attestation": null
+    },
+    "kumwe/contribution": {
+      "version": "0.1.1",
+      "attestation": null
+    }
+  },
+  "required_followup": "Verify each selected immutable source/archive and its clean consumer independently, then attach external evidence without altering released source."
 }

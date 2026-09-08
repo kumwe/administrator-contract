@@ -7,8 +7,8 @@
   "require": {
     "php": "^8.5",
     "ext-mbstring": "*",
-    "kumwe/access-control": "0.1.0",
-    "kumwe/contribution": "0.1.0"
+    "kumwe/access-control": "0.1.2",
+    "kumwe/contribution": "0.1.1"
   },
   "require-dev": {
     "phpunit/phpunit": "^12.0",
@@ -41,6 +41,7 @@
     "clean-consumer": "php tools/clean-consumer.php",
     "check": [
       "@composer:validate",
+      "@dependencies:check",
       "@lint",
       "@api",
       "@manifests",
@@ -53,7 +54,11 @@
       "@clean-consumer"
     ],
     "composer:validate": "composer validate --strict",
-    "manifests": "php tools/verify-governed-manifests.php"
+    "manifests": "php tools/verify-governed-manifests.php",
+    "dependencies:check": [
+      "bash tools/check-dependency-readiness.sh",
+      "bash tools/test-dependency-readiness.sh"
+    ]
   },
   "config": {
     "sort-packages": true

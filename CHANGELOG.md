@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.2.1
+## [0.2.1] - 2026-09-08
 
 - Align exact production requirements with the coordinated, validated extraction package graph.
 - Reject stale or incomplete dependency evidence coordinates in the complete package gate.

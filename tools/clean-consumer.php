@@ -16,7 +16,7 @@ try {
     $archive = $workspace . '/candidate.zip';
     $zip = new ZipArchive();
     if ($zip->open($archive) !== true) { throw new RuntimeException('Archive unreadable.'); }
-    foreach (['composer.json', 'resources/public-api/v1.json', 'resources/public-api/signature-details-v1.json', 'resources/capabilities/v1.json', 'resources/service-map/v1.json', 'docs/public-api.md', 'examples/standalone.php'] as $required) {
+    foreach (['composer.json', 'resources/public-api/v1.json', 'resources/public-api/signature-details-v1.json', 'resources/capabilities/v1.json', 'resources/service-map/v1.json', 'docs/public-api.md', 'docs/release-record.md', 'docs/contract.md', 'docs/dependencies.md', 'examples/standalone.php'] as $required) {
         if ($zip->getFromName($required) === false) { throw new RuntimeException('Missing archive entry: ' . $required); }
     }
     for ($i = 0; $i < $zip->numFiles; $i++) {

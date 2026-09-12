@@ -4,4 +4,4 @@ Requires PHP 8.5. The source map records a deliberate namespace ownership break;
 
 ## 0.2.0 boundary corrections
 
-Add an owned, versioned admission envelope with a mandatory canonical Capability and validated same-owner references. Bound declaration paths/templates and enforce valid UTF-8 labels. Public constructor parameter order and declaration serialization remain compatible; malformed/unbounded or externally mutable inputs are rejected or detached as documented in [the review](docs/readiness-review.md). App adoption must use the released public API and keep host integration tests in App.
+The package supplies an owned, versioned admission envelope with a mandatory canonical Capability and validated same-owner references. Bound declaration paths/templates and enforce valid UTF-8 labels. Public constructor parameter order and declaration serialization remain compatible; malformed/unbounded or externally mutable inputs are rejected or detached as documented in [the declaration contract](docs/contract.md). App adoption must use the released public API and keep host integration tests in App.

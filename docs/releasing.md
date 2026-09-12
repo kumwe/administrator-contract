@@ -1,8 +1,8 @@
 # Releasing
 
-The newest stable heading in CHANGELOG.md records the 0.2.0 candidate. The
-published baseline is 0.1.0. Maintainers review and rebase-merge the release PR into the default
-branch. No manual setup command is required.
+The newest stable heading in CHANGELOG.md selects the release version. Published releases are listed on
+[GitHub](https://github.com/kumwe/administrator-contract/releases). Maintainers rebase reviewed PRs into
+the default branch; documentation maintenance remains under Unreleased without changing existing tags.
 
 The release workflow reuses the complete package CI at the actual post-rebase
 commit: syntax, API, governed-manifest and architecture checks, maximum-level static analysis,

@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- Add live package/CI/PHP/license badges and current 0.2.1 install/dependency guidance.
+- Replace completed readiness/handover narratives with durable declaration and Core release contracts.
+- Update capability documentation references, manifest evidence and archive/record verification.
+
 ## [0.2.1] - 2026-09-08
 
 - Align exact production requirements with the coordinated, validated extraction package graph.

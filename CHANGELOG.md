@@ -6,6 +6,11 @@
 - Replace completed readiness/handover narratives with durable declaration and Core release contracts.
 - Update capability documentation references, manifest evidence and archive/record verification.
 
+## [0.2.2] - 2026-09-23
+
+- Align the change set with the ledger record: KUMWE-CS-2026-034 (kumwe/content-model's) becomes KUMWE-CS-2026-036, the sequence of KUMWE-MIG-2026-036, because the Kumwe App ledger requires both identifiers to share one sequence (D-GOV-2), never renumbers (D-GOV-3) and refuses the inconsistent pair.
+- Runtime source, public API, test ownership and dependency pins are unchanged.
+
 ## [0.2.1] - 2026-09-08
 
 - Align exact production requirements with the coordinated, validated extraction package graph.

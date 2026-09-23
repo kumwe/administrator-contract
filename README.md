@@ -21,7 +21,7 @@ Requires PHP 8.5, ext-mbstring and the exact runtime dependencies in [composer.j
 Install the published version with an exact pre-1.0 pin:
 
 ```bash
-composer require kumwe/administrator-contract:0.2.1
+composer require kumwe/administrator-contract:0.2.2
 ```
 
 See [dependencies](docs/dependencies.md) and [release verification](docs/releasing.md) before upgrading.
